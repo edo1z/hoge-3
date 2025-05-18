@@ -1,5 +1,6 @@
 import numpy as np
-from moviepy.editor import VideoClip
+from moviepy.video.io.VideoFileClip import VideoFileClip
+from moviepy.video.VideoClip import VideoClip
 from PIL import Image, ImageDraw
 
 WIDTH, HEIGHT = 640, 480
