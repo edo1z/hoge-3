@@ -1,6 +1,9 @@
 from __future__ import annotations
 
-from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip, vfx
+from moviepy.video.io.VideoFileClip import VideoFileClip
+from moviepy.video.VideoClip import TextClip
+from moviepy.video.compositing.CompositeVideoClip import CompositeVideoClip
+from moviepy.video.fx import all as vfx
 
 
 def clip_video(input_path: str, start: float, end: float, output_path: str) -> str:
