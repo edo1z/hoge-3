@@ -18,3 +18,16 @@
 ## 機械学習チュートリアル
 
 `ml_tutorial` ディレクトリに、機械学習の基本的な事項と数学的解説をまとめた Markdown ファイルを用意しています。まずは [index.md](ml_tutorial/index.md) から参照してください。
+
+## 動画生成スクリプト
+
+プロジェクトルートの `create_movie` ディレクトリに、図形が動く 20 秒の動画を生成
+するスクリプト `create_shapes_video.py` を用意しています。以下のコマンドで実行でき
+ます。
+
+```bash
+cd create_movie
+python create_shapes_video.py
+```
+
+実行すると `create_movie` ディレクトリ内に `shapes.mp4` が作成されます。
