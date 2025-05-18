@@ -3,8 +3,8 @@ from __future__ import annotations
 import os
 
 from dotenv import load_dotenv
-from langchain.chat_models import ChatOpenAI
-from langchain.schema import SystemMessage, HumanMessage
+from langchain_openai import ChatOpenAI
+from langchain_core.messages import SystemMessage, HumanMessage
 
 
 def main() -> None:
@@ -23,7 +23,8 @@ def main() -> None:
         user_input = input("You: ")
         if user_input.lower() in {"exit", "quit"}:
             break
-        response = chat([system_message, HumanMessage(content=user_input)])
+        messages = [system_message, HumanMessage(content=user_input)]
+        response = chat.invoke(messages)
         print("AI:", response.content)
 
 
