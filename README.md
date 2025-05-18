@@ -58,3 +58,23 @@ python create_shapes_video.py
    - `shapes.mp4` に文字を 2 秒間重ねて `text.mp4` に保存
    - `shapes.mp4` を 2 倍速にして `fast.mp4` に保存
 3. `exit` または `quit` で終了します。
+
+## Playwright MCP サーバとブラウザ操作チャット
+
+`mcp-server` ディレクトリに Playwright MCP を利用した簡易サーバを用意しました。
+`ts-node` で起動できます。
+
+```bash
+cd mcp-server
+npm install        # 依存パッケージをインストール
+npm run start      # MCP サーバを起動
+```
+
+起動後、`mcp_chat.py` を実行すると MCP サーバをツールとして利用した
+ブラウザ操作チャットが起動します。
+
+```bash
+python mcp_chat.py
+```
+
+`exit` または `quit` で終了します。
