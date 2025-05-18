@@ -14,3 +14,7 @@
    python chat.py
    ```
 4. `exit` または `quit` を入力すると終了します。
+
+## 機械学習チュートリアル
+
+`ml_tutorial` ディレクトリに、機械学習の基本的な事項と数学的解説をまとめた Markdown ファイルを用意しています。まずは [index.md](ml_tutorial/index.md) から参照してください。
