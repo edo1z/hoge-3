@@ -27,11 +27,18 @@ def main() -> None:
     speed_tool = tool(change_speed)
     tools = [clip_tool, overlay_tool, speed_tool]
 
+    # 動画ファイルがなければテスト用メッセージを表示
+    if not os.path.exists("shapes.mp4"):
+        print("注意: テスト用の動画ファイル 'shapes.mp4' が見つかりません。")
+        print("create_movie/create_shapes_video.py を実行すると作成できます。")
+        print("動画ファイルのパスは必ず 'shapes.mp4' を指定して実行してください。")
+
     prompt = ChatPromptTemplate.from_messages(
         [
             (
                 "system",
-                "あなたは動画編集アシスタントです。moviepy を用いて依頼された編集を実行してください。",
+                "あなたは動画編集アシスタントです。moviepy を用いて依頼された編集を実行してください。\n"
+                "入力ファイルは 'shapes.mp4' を使用してください。",
             ),
             MessagesPlaceholder("chat_history", optional=True),
             ("human", "{input}"),
@@ -44,6 +51,7 @@ def main() -> None:
 
     chat_history: list = []
     print("'exit' または 'quit' で終了します。")
+    print("入力例: 「shapes.mp4の動画を2倍速にして、中央に「テスト」というテキストを追加してください」")
 
     while True:
         user_input = input("You: ")
